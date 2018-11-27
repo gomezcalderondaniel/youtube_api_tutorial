@@ -90,21 +90,6 @@ function getChannel(channel) {
       const channel = response.result.items[0];
 
       const output = `
-        <ul class="collection">
-          <li class="collection-item">Title: ${channel.snippet.title}</li>
-          <li class="collection-item">ID: ${channel.id}</li>
-          <li class="collection-item">Subscribers: ${numberWithCommas(
-            channel.statistics.subscriberCount
-          )}</li>
-          <li class="collection-item">Views: ${numberWithCommas(
-            channel.statistics.viewCount
-          )}</li>
-          <li class="collection-item">Videos: ${numberWithCommas(
-            channel.statistics.videoCount
-          )}</li>
-        </ul>
-        <p>${channel.snippet.description}</p>
-        <hr>
         <a class="btn grey darken-2" target="_blank" href="https://youtube.com/${
           channel.snippet.customUrl
         }">Visit Channel</a>
@@ -135,7 +120,7 @@ function requestVideoPlaylist(playlistId) {
     console.log(response);
     const playListItems = response.result.items;
     if (playListItems) {
-      let output = '<br><h4 class="center-align">Latest Videos</h4>';
+      let output = '<br><h2 class="center-align">Latest Videos</h2>';
 
       // Loop through videos and append output
       playListItems.forEach(item => {
