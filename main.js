@@ -80,7 +80,7 @@ function showChannelData(data) {
 
 // Get channel from API
 function getChannel(channel) {
-  gapi.client.youtube.channels
+  gapi.client.youtube.searchz
     .list({
       part: 'snippet,contentDetails,statistics',
       forUsername: channel
